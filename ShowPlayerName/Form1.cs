@@ -20,7 +20,7 @@ namespace ShowPlayerName
             InitializeComponent();
         }
         playerInfos playersInfo = JsonConvert.DeserializeObject<playerInfos>(
-                    Encoding.UTF8.GetString(Resource.playerInfo2));
+                    Encoding.UTF8.GetString(Resource.players));
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {           
            // nameBox.Text=playersInfo.GetName(int.Parse(idBox.Text));
@@ -50,11 +50,12 @@ namespace ShowPlayerName
             public List<playerInfo> GetIdByNameAndRating(string name,int rating)
             {
                 List<playerInfo> ls = new List<playerInfo>();
+                name = name.ToLower();
                 foreach(var player in LegendsPlayers)
                 {
                     if(player.r==rating||rating==0)
                     {
-                        if (player.f.Contains(name) || player.l.Contains(name))
+                        if (player.f.ToLower().Contains(name) || player.l.ToLower().Contains(name))
                         {
                             ls.Add(player);
                         }
@@ -65,7 +66,7 @@ namespace ShowPlayerName
                 {
                     if (player.r == rating||rating==0)
                     {
-                        if (player.f.Contains(name) || player.l.Contains(name))
+                        if (player.f.ToLower().Contains(name) || player.l.ToLower().Contains(name))
                         {
                             ls.Add(player);
                         }
@@ -89,29 +90,33 @@ namespace ShowPlayerName
             int rating = 0;
             int.TryParse(raingBox.Text, out rating);
             List<playerInfo> players = playersInfo.GetIdByNameAndRating(nameBox.Text, rating);
-            listView.Items.Clear();
-            foreach(var player in players)
+            if(players.Count>0)
             {
-                HttpClient client = new HttpClient();
-                Response data=client.GetData("https://www.futbin.com/20/playerPrices?player=" + player.id);
-                FutbinPrice futbinPrice = JsonConvert.DeserializeObject<FutbinPrice>(data.Html.Match("\"ps\":({.*?})"));
-                //添加行
-                var item = new ListViewItem();
-                //item.ImageIndex = 1;
-                item.Text = player.id.ToString(); 
-                item.SubItems.Add(player.f+" "+player.l);
-                item.SubItems.Add(player.r.ToString());
-                item.SubItems.Add(futbinPrice.MinPrice); 
-                item.SubItems.Add(futbinPrice.MaxPrice);
-                item.SubItems.Add(futbinPrice.LCPrice);
-                listView.BeginUpdate();
-                listView.Items.Add(item);
-                listView.Items[listView.Items.Count - 1].EnsureVisible();//滚动到最后
-                listView.EndUpdate();
-               
+                listView.Items.Clear();
+                foreach (var player in players)
+                {
+                    HttpClient client = new HttpClient();
+                    Response data = client.GetData("https://www.futbin.com/21/playerPrices?player=" + player.id);
+                    FutbinPrice futbinPrice = JsonConvert.DeserializeObject<FutbinPrice>(data.Html.Match("\"ps\":({.*?})"));
+                    //添加行
+                    var item = new ListViewItem();
+                    //item.ImageIndex = 1;
+                    item.Text = player.id.ToString();
+                    item.SubItems.Add(player.f + " " + player.l);
+                    item.SubItems.Add(player.r.ToString());
+                    item.SubItems.Add(futbinPrice.MinPrice);
+                    item.SubItems.Add(futbinPrice.MaxPrice);
+                    item.SubItems.Add(futbinPrice.LCPrice);
+                    listView.BeginUpdate();
+                    listView.Items.Add(item);
+                    listView.Items[listView.Items.Count - 1].EnsureVisible();//滚动到最后
+                    listView.EndUpdate();
 
+
+                }
+                idBox.Text = listView.Items[0].Text;
             }
-            idBox.Text = listView.Items[0].Text;
+         
 
            
             

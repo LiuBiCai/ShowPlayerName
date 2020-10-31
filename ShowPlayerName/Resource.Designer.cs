@@ -19,7 +19,7 @@ namespace ShowPlayerName {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resource {
@@ -63,9 +63,9 @@ namespace ShowPlayerName {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] playerInfo {
+        internal static byte[] players {
             get {
-                object obj = ResourceManager.GetObject("playerInfo", resourceCulture);
+                object obj = ResourceManager.GetObject("players", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,39 @@ namespace ShowPlayerName {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] playerInfo2 {
+        internal static byte[] players_icons {
             get {
-                object obj = ResourceManager.GetObject("playerInfo2", resourceCulture);
+                object obj = ResourceManager.GetObject("players_icons", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] players_meta {
+            get {
+                object obj = ResourceManager.GetObject("players_meta", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] squadData {
+            get {
+                object obj = ResourceManager.GetObject("squadData", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] teamconfig {
+            get {
+                object obj = ResourceManager.GetObject("teamconfig", resourceCulture);
                 return ((byte[])(obj));
             }
         }

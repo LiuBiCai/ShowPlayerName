@@ -46,41 +46,46 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(70, 12);
+            this.nameBox.Location = new System.Drawing.Point(47, 9);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(130, 28);
+            this.nameBox.Size = new System.Drawing.Size(88, 20);
             this.nameBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 16);
+            this.label2.Location = new System.Drawing.Point(2, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 18);
+            this.label2.Size = new System.Drawing.Size(43, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "球员名";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(207, 16);
+            this.label3.Location = new System.Drawing.Point(138, 12);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 18);
+            this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "等级";
             // 
             // raingBox
             // 
-            this.raingBox.Location = new System.Drawing.Point(266, 14);
+            this.raingBox.Location = new System.Drawing.Point(177, 10);
+            this.raingBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.raingBox.Name = "raingBox";
-            this.raingBox.Size = new System.Drawing.Size(55, 28);
+            this.raingBox.Size = new System.Drawing.Size(38, 20);
             this.raingBox.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(327, 4);
+            this.button1.Location = new System.Drawing.Point(218, 3);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 40);
+            this.button1.Size = new System.Drawing.Size(106, 29);
             this.button1.TabIndex = 6;
             this.button1.Text = "查询";
             this.button1.UseVisualStyleBackColor = true;
@@ -96,9 +101,10 @@
             this.columnHeader5,
             this.columnHeader6});
             this.listView.HideSelection = false;
-            this.listView.Location = new System.Drawing.Point(6, 52);
+            this.listView.Location = new System.Drawing.Point(4, 38);
+            this.listView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(691, 354);
+            this.listView.Size = new System.Drawing.Size(462, 257);
             this.listView.TabIndex = 7;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -137,26 +143,28 @@
             // 
             // idBox
             // 
-            this.idBox.Location = new System.Drawing.Point(536, 12);
+            this.idBox.Location = new System.Drawing.Point(357, 9);
+            this.idBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.idBox.Name = "idBox";
-            this.idBox.Size = new System.Drawing.Size(94, 28);
+            this.idBox.Size = new System.Drawing.Size(64, 20);
             this.idBox.TabIndex = 0;
             this.idBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(492, 16);
+            this.label1.Location = new System.Drawing.Point(328, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 18);
+            this.label1.Size = new System.Drawing.Size(19, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "id";
+            this.label1.Text = "ID";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 406);
+            this.ClientSize = new System.Drawing.Size(467, 293);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -165,8 +173,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.idBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "查球员2.0";
+            this.Text = "查球员3.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
