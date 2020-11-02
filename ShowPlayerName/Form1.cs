@@ -97,6 +97,8 @@ namespace ShowPlayerName
                 {
                     HttpClient client = new HttpClient();
                     Response data = client.GetData("https://www.futbin.com/21/playerPrices?player=" + player.id);
+                    if (data.IsError)
+                        return;
                     FutbinPrice futbinPrice = JsonConvert.DeserializeObject<FutbinPrice>(data.Html.Match("\"ps\":({.*?})"));
                     //添加行
                     var item = new ListViewItem();
